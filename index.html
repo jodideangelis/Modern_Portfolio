@@ -1,13 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dark.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Kalam:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3cabeecb83.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
-</head>
-<body>
-    <h1>Jodi DeAngelis</h1>
+  </head>
+  <body>
+    <header>
+      <nav class="mobile mobile-nav">
+        <ul>
+          <li class="nav-left"><a href="#">Jodi DeAngelis</a></li>
+          <!-- # is for the top of the page when you click on Jodi-->
+          <li class="nav-right" id="hamburger" onclick="menuToggle()">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+            <!-- shift alt + down to duplicate easily -->
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Menu -->
+    <div id="hamburger-menu" class="hamburger-menu">
+      <ul>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="theme" onclick="theme()">
+          <i class="fa-light fa-moon"></i>
+          <i class="fa-light fa-sun"></i>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-left">
+        <h1>Frontend Developer</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+          optio aperiam amet reiciendis earum saepe temporibus tempore tempora
+          autem corrupti. Sequi architecto ex nihil cumque!
+        </p>
+        <a href="#projects">View My Projects</a>
+      </div>
+      <!-- ...added content... -->
+      <div class="hero-right">
+        <!-- <p class="contact-title">Let's Connect</p> -->
+        <!-- <form
+          name="name"
+          method="POST"
+          data-netlify="true"
+          class="form-contact"
+        >
+          <div class="input-group">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Name"
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Email"
+            />
+          </div>
+          <div class="input-group">
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Your Message"
+            ></textarea>
+          </div>
+          <button class="contact-button" type="submit">SEND</button>
+        </form> -->
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h1 class="section-title">Skills</h1>
+      <p>Web Technologies I am proficient at:</p>
+      <div class="icons">
+        <img src="./images/figma.png" alt="Figma Logo" />
+        <img src="./images/html.png" alt="HTML Logo" />
+        <img src="./images/css.png" alt="CSS Logo" />
+        <img src="./images/git.png" alt="Git Logo" />
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h1 class="section-title">Projects</h1>
+      <ul class="projects">
+        <li class="project">
+          <a href="https://results-challenge2.netlify.app/" target="_blank">
+            <!-- shift + ctrl + l for hightlighting multiple sections -->
+            <span class="project-title">Results</span>
+            <div class="overlay"></div>
+            <img src="./images/project.png" alt="Results Project" />
+          </a>
+        </li>
+        <li class="project">
+          <a href="https://www.ebfllc.org/" target="_blank">
+            <span class="project-title">Endure By Faith</span>
+            <div class="overlay"></div>
+            <img src="./images/ebf_project.png" alt="Endure By Faith" />
+          </a>
+        </li>
+        <li class="project">
+          <a href="https://jodideangelis.github.io/QR-Code/" target="_blank">
+            <span class="project-title">Results</span>
+            <div class="overlay"></div>
+            <img src="./images/qrc_project.png" alt="QR Project" />
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="contact">
+        <div class="contact-left">
+          <h1 class="section-title">Got a Project?</h1>
+          <h3>Contact Me</h3>
+          <a href="mailto:jodi.deangelis3@gmail.com"
+            >jodi.deangelis3@gmail.com</a
+          >
+          <div class="social-links">
+            <a href="https://github.com/jodideangelis" target="_blank">
+              <img src="./images/github_icon.png" alt="Github Icon" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jodi-deangelis/"
+              target="_blank"
+            >
+              <img src="./images/linkedIn_icon.png" alt="LinkedIn Icon" />
+            </a>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form
+            name="name"
+            method="POST"
+            data-netlify="true"
+            class="form-contact"
+          >
+            <div class="input-group">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                placeholder="Name"
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                placeholder="Email"
+              />
+            </div>
+            <div class="input-group">
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Your Message"
+              ></textarea>
+            </div>
+            <button class="contact-button" type="submit">SEND</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Loosely designed in <span>Figma</span> and coded in
+        <span>Visual Studio Code</span> by yours truly. Built with
+        <span>HTML</span> & <span>CSS</span>, deployed <span>Netlify</span>.
+      </p>
+    </footer>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
