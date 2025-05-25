@@ -1,5 +1,7 @@
 :root {
   --secondary-text: "Kalam", sans-serif;
+  --tertiary-text: "Megrim", sans-serif;
+  --dark-color: #0f1044;
 }
 
 * {
@@ -158,6 +160,11 @@ section {
   transform: translateX(0);
 }
 
+.fa-sun,
+.light-icon {
+  display: none;
+}
+
 /* Hero */
 .hero {
   padding: 106px 30px 0;
@@ -312,6 +319,7 @@ textarea {
   height: 75px;
   padding: 10px;
   margin-bottom: 20px;
+  background-color: transparent;
   border: solid 10x #000;
   border-radius: 15px;
   font-size: 25px;
