@@ -20,6 +20,7 @@
   </head>
   <body>
     <header>
+      <!-- Mobile Nav -->
       <nav class="mobile mobile-nav">
         <ul>
           <li class="nav-left"><a href="#">Jodi DeAngelis</a></li>
@@ -30,6 +31,21 @@
             <span class="bottom"></span>
             <!-- shift alt + down to duplicate easily -->
           </li>
+        </ul>
+      </nav>
+      <!-- Desktop Nav -->
+      <nav class="desktop desktop-nav">
+        <div class="nav-left">
+          <a href="#">Jodi DeAngelis</a>
+        </div>
+        <ul class="nav-right">
+          <li class="theme" onclick="theme()">
+            <i class="fa-light fa-moon"></i>
+            <i class="fa-light fa-sun"></i>
+          </li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -56,22 +72,19 @@
           optio aperiam amet reiciendis earum saepe temporibus tempore tempora
           autem corrupti. Sequi architecto ex nihil cumque!
         </p>
-        <a href="#projects">View My Projects</a>
+        <a class="btn" href="#projects">View My Projects</a>
       </div>
       <!-- ...added content... -->
-      <div class="hero-right">
-        <!-- <p class="contact-title">Let's Connect</p> -->
-        <!-- <form
-          name="name"
-          method="POST"
-          netlify
-          class="form-contact"
-        >
+      <div class="desktop hero-right">
+        <h1>Contact Me</h1>
+        <form name="contact_desktop" method="POST" netlify class="form-contact">
+          <!-- easier to give the name "contact_desktop" to see who is using which form in netlify -->
+          <!-- form name is contact  -->
           <div class="input-group">
             <input
               type="text"
               name="name"
-              id="name"
+              id="desktop_name"
               required
               placeholder="Name"
             />
@@ -80,7 +93,7 @@
             <input
               type="email"
               name="email"
-              id="email"
+              id="desktop_email"
               required
               placeholder="Email"
             />
@@ -88,12 +101,12 @@
           <div class="input-group">
             <textarea
               name="message"
-              id="message"
+              id="desktop_message"
               placeholder="Your Message"
             ></textarea>
           </div>
-          <button class="contact-button" type="submit">SEND</button>
-        </form> -->
+          <button class="btn" type="submit">SEND</button>
+        </form>
       </div>
     </section>
 
@@ -102,10 +115,24 @@
       <h1 class="section-title">Skills</h1>
       <p>Web Technologies I am proficient at:</p>
       <div class="icons">
-        <img src="./images/figma.png" alt="Figma Logo" />
-        <img src="./images/html.png" alt="HTML Logo" />
-        <img src="./images/css.png" alt="CSS Logo" />
-        <img src="./images/git.png" alt="Git Logo" />
+        <a href="https://www.figma.com" target="_blank">
+          <img src="./images/figma.png" alt="Figma Logo" />
+        </a>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+          target="_blank"
+        >
+          <img src="./images/html.png" alt="HTML Logo" />
+        </a>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+          target="_blank"
+        >
+          <img src="./images/css.png" alt="CSS Logo" />
+        </a>
+        <a href="https://git-scm.com/" target="_blank">
+          <img src="./images/git.png" alt="Git Logo" />
+        </a>
       </div>
     </section>
 

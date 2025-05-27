@@ -2,6 +2,7 @@
   --secondary-text: "Kalam", sans-serif;
   --tertiary-text: "Megrim", sans-serif;
   --dark-color: #0f1044;
+  --blue-color: #1919f7;
 }
 
 * {
@@ -33,10 +34,65 @@ section {
   /* top, left & right, bottom */
 }
 
+.desktop {
+  display: none;
+}
+
 .section-title {
   font-size: 50px;
   font-family: var(--secondary-text);
   font-weight: 400;
+}
+
+.btn {
+  cursor: pointer;
+  position: relative;
+  background-color: black;
+  border-radius: 50px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+  /* all is for background + border, etc. */
+}
+
+.btn:hover {
+  color: #000;
+  background-color: transparent;
+}
+
+.btn:before,
+.btn:after {
+  /* before - top line. after - bottom line.  But transition is all. */
+  content: "";
+  /* always needed for before & after! */
+  position: absolute;
+  /* absolute is to be able to set in one spot */
+  /* absolute has to have a relative in the parent before it. Relative sets the boundaries. */
+  top: 0;
+  right: 20px;
+  height: 1.5px;
+  width: 0;
+  background: #000;
+  transition: 0.4s ease-in-out;
+}
+
+.btn:after {
+  right: inherit;
+  top: inherit;
+  /* inherit applies one parent layer above - eg h1 within a div */
+  left: 20px;
+  bottom: 0;
+  height: 2px;
+}
+
+.btn:hover:before,
+.btn:hover:after {
+  width: calc(100% - 40px);
+  /* 100% width minus a percentage */
+  transition: 0.8s ease-in-out;
 }
 
 .hamburger-menu .fa-sun {
@@ -162,16 +218,13 @@ section {
 
 .fa-sun,
 .light-icon {
-  display: none;
+  display: none !important;
 }
 
 /* Hero */
 .hero {
-  padding: 106px 30px 0;
-  /* ...added... */
   display: flex;
-  /* add a justify content or align items? */
-  /* width */
+  padding: 106px 30px 0;
 }
 
 .hero-left {
@@ -190,56 +243,6 @@ section {
   text-align: left;
   font-size: 20px;
   padding: 20px 0;
-}
-
-/* hero button */
-.hero-left a {
-  position: relative;
-  background-color: black;
-  border-radius: 5px;
-  padding: 10px 20px;
-  color: white;
-  font-weight: 500;
-  font-size: 20px;
-  text-transform: uppercase;
-  transition: all 0.4s ease-in-out;
-  /* all is for background + border, etc. */
-}
-
-.hero-left a:hover {
-  color: #000;
-  background-color: transparent;
-}
-
-.hero-left a:before,
-.hero-left a:after {
-  /* before - top line. after - bottom line.  But transition is all. */
-  content: "";
-  /* always needed for before & after! */
-  position: absolute;
-  /* absolute is to be able to set in one spot */
-  /* absolute has to have a relative in the parent before it. Relative sets the boundaries. */
-  top: 0;
-  right: 0;
-  height: 1.5px;
-  width: 0;
-  background: #000;
-  transition: 0.4s ease-in-out;
-}
-
-.hero-left a:after {
-  right: inherit;
-  top: inherit;
-  /* inherit applies one parent layer above - eg h1 within a div */
-  left: 0;
-  bottom: 0;
-  height: 2px;
-}
-
-.hero-left a:hover:before,
-.hero-left a:hover:after {
-  width: 100%;
-  transition: 0.8s ease-in-out;
 }
 
 /* Skills */
@@ -354,6 +357,119 @@ footer span {
 
 footer span:hover {
   color: #498c94;
+}
+
+@media (min-width: 961px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  section,
+  .desktop-nav {
+    max-width: 1440px;
+  }
+
+  .section-title {
+    font-size: 90px;
+  }
+
+  /* Nav */
+  .desktop-nav {
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: -20px;
+    padding: 30px 20px 20px;
+    /* take into account what is off the top of the screen */
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 15px;
+    left: 50%;
+    /* sets the left 50% of screen or container  */
+    transform: translateX(-50%);
+    /* -50% of item itself along x-axis */
+  }
+
+  .desktop-nav a:hover,
+  .desktop-nav i:hover {
+    /* colon is action */
+    color: var(--blue-color);
+  }
+
+  .desktop-nav .nav-left {
+    margin-left: 0;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .desktop-nav .nav-right {
+    display: flex;
+    gap: 50px;
+    margin-right: 0;
+    font-size: 20px;
+  }
+
+  .nav-right i {
+    cursor: pointer;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 175px 20px 100px;
+  }
+
+  .hero-left {
+    width: 40%;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .hero-left h1 {
+    font-size: 125px;
+    line-height: 125px;
+  }
+
+  .hero-left p {
+    font-size: 25px;
+    padding-bottom: 25px;
+  }
+
+  .hero-right {
+    width: 40%;
+    margin-right: 0;
+  }
+
+  .hero-right h1 {
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
+
+  /* Skills */
+  #skills p {
+    font-size: 40px;
+  }
+
+  .icons img {
+    height: 125px;
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .icons img:hover {
+    filter: grayscale(0%);
+  }
+
+  /* Contact */
+  .form-contact input,
+  .form-contact textarea {
+    border-width: 2px;
+  }
 }
 
 /* added display:flex in .hero */
