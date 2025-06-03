@@ -11,6 +11,7 @@
   font-family: var(--tertiary-text);
   font-size: 65px;
   line-height: 65px;
+  padding-bottom: 20px;
 }
 
 .dark-mode .mobile-nav {
@@ -40,7 +41,7 @@
 
 /* Contact */
 .dark-mode .light-icon {
-  display: inline;
+  display: inline !important;
 }
 
 .dark-mode input,
@@ -49,6 +50,7 @@
   color: #fff;
 }
 
+/* Desktop */
 @media (min-width: 961px) {
   .dark-mode .btn {
     background-color: #fff;
@@ -85,5 +87,11 @@
     font-family: "jost", sans-serif;
     font-size: 35px;
     font-weight: 500;
+  }
+
+  /* Contact */
+  .dark-mode .contact-left h1 {
+    font-size: 70px;
+    margin-bottom: 40px;
   }
 }
