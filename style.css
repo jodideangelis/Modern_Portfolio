@@ -9,15 +9,14 @@
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  /* I think this is just a common setting */
   font-family: "Jost", sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
   overflow-x: hidden;
-  /* general rule for hiding everything not on screen along x-axis */
   transition: all 0.3s ease-in-out;
+  background-color: #fff;
 }
 
 ul {
@@ -31,7 +30,6 @@ a {
 
 section {
   padding: 75px 30px 30px;
-  /* top, left & right, bottom */
 }
 
 .desktop {
@@ -55,7 +53,6 @@ section {
   font-size: 20px;
   text-transform: uppercase;
   transition: all 0.4s ease-in-out;
-  /* all is for background + border, etc. */
 }
 
 .btn:hover {
@@ -65,12 +62,8 @@ section {
 
 .btn:before,
 .btn:after {
-  /* before - top line. after - bottom line.  But transition is all. */
   content: "";
-  /* always needed for before & after! */
   position: absolute;
-  /* absolute is to be able to set in one spot */
-  /* absolute has to have a relative in the parent before it. Relative sets the boundaries. */
   top: 0;
   right: 20px;
   height: 1.5px;
@@ -82,7 +75,6 @@ section {
 .btn:after {
   right: inherit;
   top: inherit;
-  /* inherit applies one parent layer above - eg h1 within a div */
   left: 20px;
   bottom: 0;
   height: 2px;
@@ -91,7 +83,6 @@ section {
 .btn:hover:before,
 .btn:hover:after {
   width: calc(100% - 40px);
-  /* 100% width minus a percentage */
   transition: 0.8s ease-in-out;
 }
 
@@ -102,7 +93,6 @@ section {
 /* Nav */
 .mobile-nav {
   z-index: 10;
-  /* to keep nav on top layer*/
   position: fixed;
   width: 100%;
   padding: 20px;
@@ -122,7 +112,6 @@ section {
 .mobile-nav .nav-left {
   font-size: 25px;
   text-transform: uppercase;
-  /* best to change case in css instead of typing */
   font-weight: 500;
 }
 
@@ -155,7 +144,6 @@ section {
   z-index: 11;
   position: fixed;
   top: 70px;
-  /* for absolute or fixed position, use top left right bottom - not margin*/
   right: 30px;
   background-color: #fff;
   padding: 30px;
@@ -170,10 +158,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: end;
-  /* list item - not text */
   justify-content: center;
   width: 100%;
-  /* parents only affect direct child - ul --> li */
 }
 
 .hamburger-menu li {
@@ -216,14 +202,16 @@ section {
   transform: translateX(0);
 }
 
+/* Icons - Light to Dark Mode */
 .fa-sun,
 .light-icon {
   display: none !important;
 }
 
-/* Hero */
+/* Mobile Hero Section*/
 .hero {
   display: flex;
+  justify-content: center;
   padding: 106px 30px 0;
 }
 
@@ -245,7 +233,7 @@ section {
   padding: 20px 0;
 }
 
-/* Skills */
+/* Mobile Skills Section */
 #skills p {
   font-size: 20px;
   text-align: center;
@@ -385,12 +373,11 @@ footer span:hover {
   .desktop-nav {
     max-width: 1440px;
   }
-
   .section-title {
     font-size: 90px;
   }
 
-  /* Nav */
+  /* Desktop Nav */
   .desktop-nav {
     z-index: 10;
     position: fixed;
@@ -399,19 +386,15 @@ footer span:hover {
     width: 100%;
     margin-top: -20px;
     padding: 30px 20px 20px;
-    /* take into account what is off the top of the screen */
     background-color: #fff;
     border: 2px solid #000;
     border-radius: 15px;
     left: 50%;
-    /* sets the left 50% of screen or container  */
     transform: translateX(-50%);
-    /* -50% of item itself along x-axis */
   }
 
   .desktop-nav a:hover,
   .desktop-nav i:hover {
-    /* colon is action */
     color: var(--blue-color);
   }
 
@@ -540,8 +523,3 @@ footer span:hover {
     font-size: 18px;
   }
 }
-
-/* added display:flex in .hero */
-
-/* questions */
-/* you need script tag & link at top of html for use of icons, right? icons will not work without? */
